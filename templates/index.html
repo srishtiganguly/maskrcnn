@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Required dependencies -->
+		<script type="text/javascript"
+						src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.1/prop-types.min.js"></script>
+		<script type="text/javascript"
+						src="https://cdnjs.cloudflare.com/ajax/libs/react/16.3.2/umd/react.production.min.js"></script>
+		<script type="text/javascript"
+						src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.2/umd/react-dom.production.min.js"></script>
+		<script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+		<script type="text/babel" data-presets="es2017, stage-3"
+						data-plugins="syntax-async-functions,transform-class-properties,transform-es2015-modules-umd, transform-async-to-generator"></script>
+		<!-- Optional dependencies -->
+		<script type="text/javascript"
+						src="https://cdnjs.cloudflare.com/ajax/libs/react-transition-group/2.2.1/react-transition-group.min.js"></script>
+		<script type="text/javascript"
+						src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script type="text/javascript"
+						src="https://cdnjs.cloudflare.com/ajax/libs/react-popper/0.10.4/umd/react-popper.min.js"></script>
+
+		<!-- Reactstrap -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/7.1.0/reactstrap.min.js"></script>
+		<script src=" https://cdnjs.cloudflare.com/ajax/libs/react-router/4.3.1/react-router.min.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react-markdown/4.0.6/react-markdown.js"></script>
+		<script src="https://unpkg.com/react-router-dom@4.3.1/umd/react-router-dom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+		<!-- Lastly, include your app's bundle -->
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="C:/Users/DESRGAN/OneDrive - ABB/Desktop/Python/Uniana4/Mask_RCNN-master/samples/templates/css/custom.css"/>
+
+</head>
+
+<body style="background-color:lavender;">
+
+<br>
+<br>
+
+<h1 style="text-align:center; font-family:Tahoma, sans-serif, sans-serif; font-weight:800; font-size: medium; color:midnightblue;">Welcome to Analytics 4 examination!</h1>
+
+<h1 style="text-align:center; font-family:Tahoma, sans-serif, sans-serif; font-weight:800; color:midnightblue;">Mask R CNN Object Segmentation and Detection</h1>
+
+<br>
+<br>
+<br>
+
+<h2 style="text-align:center; font-family:Geneva, sans-serif; color: rgb(185, 11, 113); font-weight: 700;">Upload Image</h2>
+
+<br>
+<br>
+
+<form align="center" action = "/predict" method = "POST" enctype = "multipart/form-data">
+	<input align="center" type = "file" name = "file" />
+	<input align="center" name = "Predict" type = "submit"/>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<div>
+    {% if output == '/static/image.png' %}
+        <h2 id= "output" style="text-align:center; font-family:Geneva, sans-serif; color: rgb(185, 11, 113); font-weight: 700;">Result</h2>
+        <img class="mix-blend-mode" src={{output}} alt="centered image" />
+    {% endif %}
+</div>

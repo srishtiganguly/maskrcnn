@@ -144,7 +144,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         else:
             caption = captions[i]
         ax.text(x1, y1 + 8, caption,
-                color='w', size=11, backgroundcolor="none")
+                color='b', size=11, backgroundcolor="none")
 
         # Mask
         mask = masks[:, :, i]
@@ -164,7 +164,8 @@ def display_instances(image, boxes, masks, class_ids, class_names,
             ax.add_patch(p)
     ax.imshow(masked_image.astype(np.uint8))
     if auto_show:
-        plt.show()
+        # plt.show()
+        plt.savefig("static/image.png")
 
 
 def display_differences(image,
@@ -436,7 +437,7 @@ def draw_boxes(image, boxes=None, refined_boxes=None,
             if refined_boxes is not None:
                 y1, x1, y2, x2 = ry1, rx1, ry2, rx2
             ax.text(x1, y1, caption, size=11, verticalalignment='top',
-                    color='w', backgroundcolor="none",
+                    color='b', backgroundcolor="none",
                     bbox={'facecolor': color, 'alpha': 0.5,
                           'pad': 2, 'edgecolor': 'none'})
 
