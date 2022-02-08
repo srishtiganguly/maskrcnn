@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'maskrcnn'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DE9A0E22AE5942A6946351288EA8C883 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_357A1362C17C4EF2A28708BBF8960806 }}
