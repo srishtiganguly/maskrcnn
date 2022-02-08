@@ -1,20 +1,19 @@
-FROM python:3.6-stretch
+# start by pulling the python image
+FROM python:3.6-alpine
 
-RUN python3.6 --version && pip --version
-RUN pip install gunicorn
-
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
-
-# We copy just the requirements.txt first to leverage Docker cache
+# copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 
+# switch working directory
 WORKDIR /app
 
+# install the dependencies and packages in the requirements file
 RUN pip install -r requirements.txt
 
+# copy every content from the local file to the image
 COPY . /app
 
+# configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
-CMD [ "app.py" ]
+CMD ["app.py" ]
