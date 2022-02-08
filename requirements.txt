@@ -1,6 +1,6 @@
 Flask>=2.0.0
-numpy=1.19.x
-scipy=1.19.x
+numpy==1.19.x
+scipy==1.19.x
 Pillow
 cython=0.29.27
 matplotlib
