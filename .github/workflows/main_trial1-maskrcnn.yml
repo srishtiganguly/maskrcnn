@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - maskrcnn
+name: Build and deploy Python app to Azure Web App - trial1-maskrcnn
 
 on:
   push:
@@ -58,6 +58,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'maskrcnn'
+          app-name: 'trial1-maskrcnn'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A7E59AE9F1E340678830AA8CD3E6C155 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_321568AED9C24B2DA36B6B0178439B74 }}
