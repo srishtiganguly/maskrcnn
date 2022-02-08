@@ -3,8 +3,6 @@ FROM python:3.6-stretch
 RUN python3.6 --version && pip --version
 RUN pip install gunicorn
 
-MAINTANER "srishti.ganguly99@gmail.com"
-
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
