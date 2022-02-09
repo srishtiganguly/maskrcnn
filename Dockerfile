@@ -1,19 +1,20 @@
-# start by pulling the python image
-FROM python:3.6-alpine
+FROM python:3.7
 
-# copy the requirements file into the image
+RUN pip install --upgrade pip
+
+RUN apt-get update
+
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+
+# We copy just the requirements.txt first to leverage Docker cache
 COPY ./requirements.txt /app/requirements.txt
 
-# switch working directory
 WORKDIR /app
 
-# install the dependencies and packages in the requirements file
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 
-# copy every content from the local file to the image
 COPY . /app
 
-# configure the container to run in an executed manner
-ENTRYPOINT [ "python" ]
+EXPOSE 5000
 
-CMD ["app.py" ]
+CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]

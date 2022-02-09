@@ -34,7 +34,7 @@
 
 		<!-- Lastly, include your app's bundle -->
 		<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
-		<link type="text/css" rel="stylesheet" href="templates/css/custom.css"/>
+		<link type="text/css" rel="stylesheet" href="./templates/css/custom.css"/>
 
 </head>
 
@@ -67,8 +67,17 @@
 <br>
 
 <div>
+	<style>
+		.center {
+  			display: block;
+  			margin-left: auto;
+ 			margin-right: auto;
+  			width: 50%;
+		}
+	</style>
+
     {% if output == '/static/image.png' %}
         <h2 id= "output" style="text-align:center; font-family:Geneva, sans-serif; color: rgb(185, 11, 113); font-weight: 700;">Result</h2>
-        <img class="mix-blend-mode" src={{output}} alt="centered image" />
+        <img class="center" src={{output}} />
     {% endif %}
 </div>

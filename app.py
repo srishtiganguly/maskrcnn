@@ -5,23 +5,12 @@
 # 
 # A quick intro to using the pre-trained model to detect and segment objects.
 
-import mimetypes
 import os
-import io
 import sys
-import base64
-import random
-import math
-import ntpath
-import numpy as np
-from PIL import Image
 import skimage.io
 import tensorflow
 import matplotlib
-from matplotlib.figure import Figure
-matplotlib.use('TkAgg')
-import multiprocessing
-import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 from flask import Flask, redirect, url_for, request, render_template, Response, send_file
 from flask_bootstrap import Bootstrap
 from werkzeug.utils import secure_filename
@@ -172,6 +161,6 @@ def results():
     return render_template('result.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',port=5000)
 
 
