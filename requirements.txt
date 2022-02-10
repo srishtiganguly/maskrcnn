@@ -9,7 +9,7 @@ flask_bootstrap==3.3.7.1
 werkzeug==2.0.2
 Pillow== 8.4.0
 Jinja2==3.0.3
-tensorflow-cpu
+tensorflow==1.13.1
 keras==2.0.8
 h5py==2.10.0
 scikit-image

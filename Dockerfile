@@ -15,8 +15,4 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 COPY . /app
 
-EXPOSE 5000
-
-ENTRYPOINT [ "python"]
-
-CMD [ "app"]
+ENTRYPOINT [ "python","app.py"]
